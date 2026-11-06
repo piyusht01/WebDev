@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate</title>
+   <style>
+    body{
+        background-color: black;
+    }
+    #body{
+        perspective: 900px;
+    }
+    #main{
+        height: 500px;
+        width: 400px;
+        margin: 200px auto;
+        position: relative;
+        transition-duration: 2s;
+        transform-style: preserve-3d;
+    }
+    #main:hover{
+         transform: rotateY(180deg);
+    }
+    #card1{
+        height: 50%;
+        width: 100%;
+        background-color: blue;
+        position: absolute;
+        z-index: 1;
+        backface-visibility: hidden;
+    }
+    #card2{
+        height: 50%;
+        width: 100%;
+        background-color: brown;
+        position: absolute;
+        transform: rotateY(180deg);
+    }
+    #div{
+        color: snow;
+    }
+    #main image{
+        height: 100%;
+        width: 100%;
+    }
+    img{
+        height: 100%;
+        width: 100%;
+    }
+   </style>
+</head>
+<body>
+    <div id="main">
+        <div id="card1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5bKCQlpSxFubGH2DLY8qeFYSVzqkRpDCURopfLjeyRQ&s=10" alt="">
+        </div>
+        <div id="card2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYHRKIeh-q0-f4AcZ4KF-M7PaFFl-KupEWYFkv1Gkuw&s=10" alt="">
+        </div>
+</body>
+</html>

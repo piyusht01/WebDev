@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .parent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .one{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            background-color: orange;
+        }
+        .two{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            background-color: skyblue;
+        }
+        .three{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            background-color: pink;
+        }
+        .one:hover{
+            background-color: black;
+        }
+        .two:hover{
+            background-color: black;
+        }
+        .three:hover{
+            background-color: black;
+        }
+        .circle{
+            background-color: black;
+        }
+        .circle:nth-child(one){
+            background: linear-gradient(red,orange);
+        }
+        .circle:nth-child(two){
+            background: linear-gradient(blue,yellow);
+        }
+        @keyframes loading{
+            0%{
+                transform: translateY(0) scale(1);
+                opacity: 0.5;
+            }
+            50%{
+                transform: translateY(-40px) scale(1.3);
+            }
+            100%{
+                transform: translateY(0) scale(1);
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    </div>
+</body>
+</html>

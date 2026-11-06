@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: antiquewhite;
+        }
+        header{
+            display: flex;
+            height: 50px;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        nav{
+            display: flex;
+            gap: 50px;
+        }
+        nav a{
+            color: black;
+        }
+        a{
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            color: orange;
+        }
+        #one{
+            height: 250px;
+            width: 500px;
+            padding-left: 75px;
+            padding-top: 50px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 50px;
+        }
+        #one button{
+            background-color: black;
+            color: white;
+            margin: 5px;
+            padding: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-top: 25px;
+        }
+        h1{
+            font-size: 60px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .black{
+            color: black;
+        }
+        .frontend{
+            color: orangered;
+        }
+        #parent{
+            display: flex;
+            justify-content: space-between;
+            padding-right: 50px;
+        }
+
+        .carousel{
+            width: 100vw;
+            height: 50px;
+            background-color:black;
+            color: white;
+            text-align: center;
+            margin-top: 200px;
+            overflow: hidden;
+        }
+        .track{
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            padding: 15px;
+            justify-content: space-between;
+            font-family: Arial, Helvetica, sans-serif;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll{
+            from{
+                transform: translateX(0) ;
+            }
+            to{
+                transform: translateX(-50%) ;
+            }
+        }
+
+        .main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            margin-top: 5px;
+        }
+        #child1{
+            width: 30%;
+            padding: 100px;
+            margin-top: 75px;
+            display: flex;
+            color: red;
+        }
+        #child2{
+            width: 30%;
+            padding: 100px;
+            display: flex;
+            color: red;
+
+        }
+        #child3{
+            width: 30%;
+            margin-top: 50px;
+            padding: 100px;
+            display: flex;
+        }
+        a span{
+            color: orangered;
+            font-size: 2em;
+        }
+        #one button:hover{
+            background-color: orangered;
+        }
+        #two{
+            display: flex;
+            height: 350px;
+            width: 350px;
+            justify-content: right;
+            margin-top: 150px;
+            margin-right: 50px;
+            background-color: orangered;
+            border-radius: 40% 35% 35% 30%;
+        }
+        #main h1{
+            color: white;
+        }
+        #twoo{
+            color: orangered;
+        }
+        #box1{
+            padding: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+    <header>
+        <a href="#"><span>P.</span></a>
+        <nav>
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Work">Work</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Contact">Contact</a>
+        </nav>
+        <a href="">Lets talk</a>
+    </header>
+    </div>
+    <br>
+    <div id="parent">
+        <div id="one">
+            <h1>
+            <span class="black">Creative</span>
+            <br>
+            <span class="frontend">Frontend</span>
+            <br>
+            <span class="black">Developer</span>
+            </h1>
+            <p>I design and build clean, modern and engaging digital experiences for the web.</p>
+            <button>Explore My Work</button>
+            <button>Contact Me</button>
+        </div>
+        <div id="two"></div>
+    </div>
+
+    <div class="carousel">
+        <div class="track">
+            <span class="text">♦️ Web development</span>
+            <span class="text">♦️ Frontend</span>
+            <span class="text">♦️ Backend</span>
+            <span class="text">♦️ Web design</span>
+        </div>
+        </div>
+
+    <div class="main">
+        <div id="child1">01 - About</div>
+        <div id="child2"><h1>Lorem ipsum dolor sit amet.</h1></div>
+        <div id="child3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus libero officiis tenetur voluptas illo harum enim modi ullam optio doloribus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis laudantium velit omnis sunt mollitia modi ab ad beatae nobis illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero rem eum quam atque quibusdam officia magni unde alias error id.</p></div>
+    </div>
+
+    <div id="main">
+        <div id="box1">
+        <p></p>
+        <h1><span id="one">Things I've</span><span id="twoo"> created.</span></h1>
+        </div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+    </div>
+</body>
+</html>

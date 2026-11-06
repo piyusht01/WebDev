@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            border: 4px solid black;
+            border-radius: 50%;
+            margin: auto;
+            background: linear-gradient(red,blue,green);
+            animation-name: anime;
+            animation-duration: 900ms;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in;
+        }
+        @keyframes anime{
+            0%{
+                transform: translateY(opx);
+            }
+            100%{
+                transform: translateY(85vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

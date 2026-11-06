@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button>Dark mode</button>
+    <script>
+        let btn=document.querySelector('button')
+        let body=document.querySelector('body')
+        let a=true
+        btn.onclick=function(){
+            if(a){
+            body.style.backgroundColor='black'
+            a=false
+            }
+            else{
+                body.style.backgroundColor='white'
+                a=true
+            }
+        }
+
+        //let h2= document.querySelector("h2")
+        //h2.style.color='red'
+
+        //let h1=document.getElementsByClassName("two")
+        //for(let i of h1){
+        //    i.style.color='red'
+        //}
+
+        //h1[1].style.color='red'
+
+        //let h1=document.getElementById("one");
+        //h1.style.color='red'
+        //h1.innerText="byeeeee"
+
+        //console.log(h1);
+        
+    </script>
+</body>
+</html>

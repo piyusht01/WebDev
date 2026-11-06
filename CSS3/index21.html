@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMATION</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #parent{
+            height: 100%;
+            width: 100%;
+            border: 2px solid;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            animation: infinite;
+        }
+        .one{
+            height: 125px;
+            width: 100px;
+            background-color: white;
+            overflow-x: auto;
+            animation: 12s linear infinite;
+        }
+        @keyframes scroll{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+    <div id="one" class="one"></div>
+    <div id="two" class="one"></div>
+    <div id="three" class="one"></div>
+    <div id="four" class="one"></div>
+    <div id="five" class="one"></div>
+    <div id="six" class="one"></div>
+    <div id="seven" class="one"></div>
+    <div id="eight" class="one"></div>
+    <div id="nine" class="one"></div>
+    <div id="ten" class="one"></div>
+    <div id="eleven" class="one"></div>
+    <div id="twelve" class="one"></div>
+    </div>
+</body>
+</html>

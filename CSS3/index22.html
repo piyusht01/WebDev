@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMATION</title>
+    <style>
+        h1{
+            text-align: center;
+            margin-top: 100px;
+            color: white;
+        }
+        body{
+            background-color: black;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .carousel{
+            margin: 100px auto;
+            width: 90%;
+            border: 5px solid white;
+            display: flex;
+            overflow: hidden;
+        }
+        .group{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding-right: 20px;
+        }
+        .track{
+            display: flex;
+            animation: scroll 2s linear infinite;
+            width: max-content;
+        }
+        .card{
+            width: 300px;
+            height: 30vh;
+            padding: 2px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .card img{
+            height: 100%;
+            width: 100%;
+        }
+        @keyframes scroll{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CR7</h1>
+    <div class="carousel">
+        <div class="track">
+            <div class="group">
+            <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+            <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+            <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+            <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+            <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+            <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+            </div>
+            </div>
+            <div class="track">
+            <div class="group">
+                <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+                <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+                <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+                <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+                <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+                <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtN1LblcfnP6DzlsD-19FvMPCqei1J1NQhq9eOWAaUqw&s=10" ></div>
+            </div>
+            </div>
+    </div>
+</body>
+</html>

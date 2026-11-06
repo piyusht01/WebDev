@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Frontend Developer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f8f5f0;
+      color: #171615;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+    header {
+      height: 70px;
+      padding: 0 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e7e1d9;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: #df603f;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      font-size: 12px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #df603f;
+    }
+
+    .talk {
+      border: 1px solid #777;
+      border-radius: 30px;
+      padding: 9px 20px;
+      font-size: 12px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 570px;
+      padding: 55px 7%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .availability {
+      display: inline-block;
+      padding: 8px 13px;
+      border: 1px solid #e3ded7;
+      border-radius: 30px;
+      font-size: 11px;
+      margin-bottom: 22px;
+    }
+
+    .availability span {
+      color: #62a87a;
+      margin-right: 6px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(48px, 6vw, 72px);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    h1 em {
+      color: #df603f;
+    }
+
+    .intro {
+      max-width: 390px;
+      color: #69645f;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 30px;
+      font-size: 11px;
+      transition: 0.3s;
+    }
+
+    .btn-dark {
+      color: white;
+      background: #171615;
+    }
+
+    .btn-dark:hover {
+      background: #df603f;
+      transform: translateY(-3px);
+    }
+
+    .btn-light {
+      border: 1px solid #c9c2ba;
+    }
+
+    .btn-light:hover {
+      background: white;
+    }
+
+    /* ANIMATED CIRCLE AREA */
+    .hero-art {
+      height: 400px;
+      background: #f1f5f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Orange organic circle */
+    .blob {
+      width: 275px;
+      height: 275px;
+      background: #df603f;
+      position: absolute;
+      z-index: 1;
+
+      /* Different radius on all four corners */
+      border-radius: 47% 53% 43% 57% / 42% 40% 60% 58%;
+
+      animation: morph 8s ease-in-out infinite;
+    }
+
+    /* Dark shadow behind the card */
+    .shadow-shape {
+      width: 220px;
+      height: 245px;
+      background: #171615;
+      position: absolute;
+      z-index: 2;
+      transform: translate(12px, 12px) rotate(3deg);
+
+      border-radius: 42% 45% 7% 7% / 30% 30% 5% 5%;
+
+      animation: shadowMorph 8s ease-in-out infinite;
+    }
+
+    /* Profile card */
+    .profile-card {
+      width: 215px;
+      height: 245px;
+      background: #f0c9a7;
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 25px;
+
+      border-radius: 42% 42% 7% 7% / 31% 31% 5% 5%;
+
+      transform: rotate(-2deg);
+      animation: float 5s ease-in-out infinite;
+      box-shadow: 0 8px 15px #00000010;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #f8f5f0;
+      position: absolute;
+      top: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+    }
+
+    .profile-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .profile-card p {
+      font-size: 9px;
+      color: #514238;
+    }
+
+    .card-line {
+      height: 2px;
+      width: 30px;
+      background: #171615;
+      margin-top: 12px;
+    }
+
+    /* The blob continuously changes its shape */
+    @keyframes morph {
+      0%, 100% {
+        border-radius: 47% 53% 43% 57% / 42% 40% 60% 58%;
+        transform: rotate(-5deg) scale(1);
+      }
+
+      25% {
+        border-radius: 58% 42% 57% 43% / 49% 57% 43% 51%;
+        transform: rotate(4deg) scale(1.03);
+      }
+
+      50% {
+        border-radius: 38% 62% 48% 52% / 57% 39% 61% 43%;
+        transform: rotate(8deg) scale(0.98);
+      }
+
+      75% {
+        border-radius: 54% 46% 36% 64% / 40% 58% 42% 60%;
+        transform: rotate(-2deg) scale(1.02);
+      }
+    }
+
+    @keyframes shadowMorph {
+      0%, 100% {
+        border-radius: 42% 45% 7% 7% / 30% 30% 5% 5%;
+      }
+
+      50% {
+        border-radius: 30% 70% 9% 15% / 44% 30% 12% 10%;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        translate: 0 0;
+        rotate: -2deg;
+      }
+
+      50% {
+        translate: 0 -8px;
+        rotate: 1deg;
+      }
+    }
+
+    /* OTHER SECTIONS */
+    section.content {
+      padding: 75px 7%;
+      border-top: 1px solid #e7e1d9;
+    }
+
+    .eyebrow {
+      color: #df603f;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 55px);
+      margin-bottom: 20px;
+    }
+
+    .content h2 em {
+      color: #df603f;
+    }
+
+    .description {
+      max-width: 550px;
+      color: #69645f;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .work-card {
+      padding: 25px;
+      min-height: 190px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: transform 0.3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .work-card small {
+      margin-bottom: auto;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .work-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      margin: 18px 0 8px;
+    }
+
+    .work-card p {
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .peach { background: #efd0b5; }
+    .lilac { background: #ded8e9; }
+    .green { background: #dce5d8; }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .skills span {
+      border: 1px solid #ded7ce;
+      padding: 12px 18px;
+      border-radius: 30px;
+      font-size: 12px;
+    }
+
+    footer {
+      padding: 25px 7%;
+      border-top: 1px solid #e7e1d9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #69645f;
+    }
+
+    /* MOBILE RESPONSIVENESS */
+    @media (max-width: 760px) {
+      header {
+        padding: 0 5%;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 10px;
+      }
+
+      .talk {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 6%;
+      }
+
+      .hero-art {
+        height: 350px;
+      }
+
+      .blob {
+        width: 245px;
+        height: 245px;
+      }
+
+      .shadow-shape {
+        width: 205px;
+        height: 225px;
+      }
+
+      .profile-card {
+        width: 200px;
+        height: 225px;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section.content {
+        padding: 55px 6%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      header {
+        height: auto;
+        min-height: 65px;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: space-between;
+        order: 3;
+      }
+
+      h1 {
+        font-size: 53px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="#home" class="logo">M<span>.</span></a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="talk">Let's Talk</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+
+      <div class="hero-copy">
+        <div class="availability">
+          <span>●</span> Available for work
+        </div>
+
+        <h1>
+          Creative<br>
+          <em>Frontend</em><br>
+          Developer.
+        </h1>
+
+        <p class="intro">
+          I design and build clean, modern and engaging digital
+          experiences for the web.
+        </p>
+
+        <div class="buttons">
+          <a href="#work" class="btn btn-dark">Explore My Work</a>
+          <a href="#contact" class="btn btn-light">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="blob"></div>
+        <div class="shadow-shape"></div>
+
+        <article class="profile-card">
+          <div class="avatar">👩🏻‍💻</div>
+          <h2>Piyush</h2>
+          <p>Frontend Developer</p>
+          <div class="card-line"></div>
+        </article>
+      </div>
+
+    </section>
+
+    <section class="content" id="about">
+      <p class="eyebrow">A LITTLE ABOUT ME</p>
+      <h2>Thoughtful design.<br><em>Purposeful code.</em></h2>
+      <p class="description">
+        I enjoy turning ideas into friendly, accessible web experiences.
+        I care about small details, smooth interactions and layouts that
+        look great on every screen.
+      </p>
+    </section>
+
+    <section class="content" id="work">
+      <p class="eyebrow">SELECTED WORK</p>
+      <h2>A few things I've <em>made.</em></h2>
+
+      <div class="work-grid">
+        <article class="work-card peach">
+          <small>01 / WEB DESIGN</small>
+          <h3>Studio Landing Page</h3>
+          <p>A warm, minimal home for a creative studio.</p>
+        </article>
+
+        <article class="work-card lilac">
+          <small>02 / FRONTEND</small>
+          <h3>Task Flow</h3>
+          <p>A simple interface for staying focused.</p>
+        </article>
+
+        <article class="work-card green">
+          <small>03 / UI CONCEPT</small>
+          <h3>Daily Rituals</h3>
+          <p>A calm dashboard for everyday routines.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content" id="skills">
+      <p class="eyebrow">WHAT I USE</p>
+      <h2>My creative <em>toolkit.</em></h2>
+
+      <div class="skills">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>Responsive Design</span>
+        <span>JavaScript</span>
+        <span>Git & GitHub</span>
+        <span>Figma</span>
+      </div>
+    </section>
+
+    <section class="content" id="contact">
+      <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+      <h2>Let's make something<br><em>meaningful.</em></h2>
+      <a href="mailto:hello@example.com" class="btn btn-dark">
+        Say Hello ↗
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="logo">M<span>.</span></a>
+    <p>Designed with care · © 2026 Mitali</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+</body>
+</html>

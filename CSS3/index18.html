@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Gradient</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            color: white;
+            text-align: center ;
+        }
+        #parent{
+            height: 100%;
+            justify-content: center;
+            display: grid;
+            grid-template-columns: 400px 400px 400px ;
+            grid-template-rows: 300px 300px 300px 300px 300px;
+            gap: 20px;
+        }
+        .one{
+            border: 2px solid white;
+            border-radius: 5%;
+        }
+        #one{
+            background: linear-gradient(red,blue);
+        }
+        #two{
+            background: linear-gradient(to right,red, blue);
+        }
+        #three{
+            background: linear-gradient(to left, red, blue);
+        }
+        #four{
+            background: linear-gradient(to top, red, blue);
+        }
+        #five{
+            background: linear-gradient(to bottom right,red ,blue );
+        }
+        #six{
+            background: linear-gradient(45deg, red, blue);
+        }
+        #seven{
+            background: linear-gradient(
+                to right,
+                red ,
+                orange ,
+                yellow ,
+                green ,
+                purple 
+            );
+        }
+        #eight{
+            background: linear-gradient(
+                to right,
+                red 50%,
+                blue 50%
+
+            );
+        }
+        #nine{
+            background: radial-gradient(
+                red,
+                blue
+            );
+        }
+        #ten{
+            background: radial-gradient(
+                circle,
+                red,
+                blue
+            );
+        }
+        #eleven{
+            background: repeating-linear-gradient(
+                45deg,
+                red 0px,
+                red 20px,
+                blue 20px,
+                blue 40px
+            );
+        }
+        #twelve{
+            background: repeating-conic-gradient(
+                red 0deg 20deg,
+                blue 20deg 40deg
+            );
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Gradients</h1>
+    <div id="parent">
+    <div id="one" class="one"></div>
+    <div id="two" class="one"></div>
+    <div id="three" class="one"></div>
+    <div id="four" class="one"></div>
+    <div id="five" class="one"></div>
+    <div id="six" class="one"></div>
+    <div id="seven" class="one"></div>
+    <div id="eight" class="one"></div>
+    <div id="nine" class="one"></div>
+    <div id="ten" class="one"></div>
+    <div id="eleven" class="one"></div>
+    <div id="twelve" class="one"></div>
+    </div>
+</body>
+</html>

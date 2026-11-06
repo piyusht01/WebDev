@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button>click me</button> -->
+    <input id="one"/>
+    <button>Click me</button>
+    <h1></h1>
+    <script>
+        let inp=document.querySelector("#one")
+        let h1=document.querySelector("h1")
+        let btn=document.querySelector("button")
+        btn.addEventListener("click",function(){
+            //console.log(e.target.value);
+            h1.innerText=inp.value
+            inp.value=""
+        })
+
+        //btn.oneclick=function(){
+        //    console.log("hello");
+        //}
+        //console.log(btn);
+        
+    </script>
+</body>
+</html>

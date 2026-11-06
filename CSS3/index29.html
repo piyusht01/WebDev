@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .carousel{
+            width: 100vw;
+            height: 50px;
+            padding: 15px;
+            background-color:black;
+            color: white;
+            text-align: center;
+            margin: 360px auto;
+            overflow: hidden;
+        }
+        .track{
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll{
+            from{
+                transform: translateX(0) ;
+            }
+            to{
+                transform: translateX(-50%) ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="track">
+            <span class="text">Web development</span>
+            <span class="text">Frontend</span>
+            <span class="text">Web development</span>
+            <span class="text">Backend</span>
+        </div>
+    </div>
+</body>
+</html>
