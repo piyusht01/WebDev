@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
     <style>
-        div{
+        #parent{
+            border: 2px solid;
+            display: flex;
+            justify-content: space-between;
+        }
+        #parent div{
             height: 100px;
             width: 100px;
-            border: 2px solid;
-            padding: 10px;
-            margin: 10px;
+        }
+        #one{
+            background-color: blue;
+        }
+        #one:hover{
+            width: 1200px;
+        }
+        #two{
+            background-color: brown;
+        }
+        #two:hover{
+            width: 1200px;
+        }
+        #three{
+            background-color: aqua;
+        }
+        #three:hover{
+            width: 1200px;
+        }
+        #four{
+            background-color: blueviolet;
+        }
+        #four:hover{
+            width: 1200px;
         }
     </style>
 </head>
 <body>
-    <div>
-        Hello
-    </div>
+    <div id="parent">
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
 </body>
 </html>
