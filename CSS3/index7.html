@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        #main{
+            height: 500px;
+            width: 100vw;
+            border: 2px solid black;
+            background-color: black;
+        }
+        #main:hover .one{
+            margin-left: 1350px;
+            border-radius: 50%;
+        }
+        .one{
+            height: 100px;
+            width: 100px;
+            transition-duration: 2s;
+        }
+        #one{
+            background-color: blue;
+            transition-timing-function: linear;
+        }
+        #two{
+            background-color: green;
+            transition-timing-function: ease-in;
+        }
+        #three{
+            background-color: brown;
+            transition-timing-function: ease-out;
+        }
+        #four{
+            background-color: purple;
+            transition-timing-function: linear;
+        }
+        #five{
+            background-color: red;
+            transition-timing-function: step-end;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="one" class="one"></div>
+        <div id="two" class="one"></div>
+        <div id="three" class="one"></div>
+        <div id="four" class="one"></div>
+        <div id="five" class="one"></div>
+</body>
+</html>

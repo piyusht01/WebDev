@@ -5,27 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #n{
+        body{
             background-color: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 50px;
         }
-        a{
-            color: white;
+        #card{
+            height: 600px;
+            width: 400px;
+            border: 5px black;
+            background-color: blue;
+            margin: auto;
         }
-        div{
-            color: white;
+        #child1{
+            height: 200px;
+            width: 400px;
+            border: 2px;
+            background-color: orangered;
+        }
+        #child2{
+            height: 200px;
+            width: 400px;
+            border: 2px;
+            background-color: white;
+        }
+        #child3{
+            height: 200px;
+            width: 400px;
+            border: 2px;
+            background-color: green;
+        }
+        #one{
+            text-align: center;
+            padding-top: 90px;
+        }
+        #one:hover{
+            color: orangered;
         }
     </style>
 </head>
 <body>
-    <div id="n">
-        <a href="Home">Home</a>
-        <a href="About">About</a>
-        <a href="Contact">Contact</a>
-        <a href="Details">Details</a>
+    <div id="card">
+        <div id="child1"></div>
+        <div id="child2">
+            <div id="one">INDIA</div>
+        </div>
+        <div id="child3"></div>
     </div>
 </body>
 </html>

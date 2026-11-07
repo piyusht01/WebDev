@@ -3,51 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transition</title>
+    <title>Flexbox</title>
     <style>
-        #main{
-            height: 500px;
-            width: 100vw;
-            border: 2px solid black;
+        body{
             background-color: black;
         }
-        #main:hover .one{
-            margin-left: 1350px;
-            border-radius: 50%;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .one{
-            height: 100px;
-            width: 100px;
-            transition-duration: 2s;
+        #box1{
+            height: 250px;
+            width: 250px;
+            background-color: white;
         }
-        #one{
-            background-color: blue;
-            transition-timing-function: linear;
+         #box2{
+            height: 250px;
+            width: 250px;
+            background-color: white;
         }
-        #two{
-            background-color: green;
-            transition-timing-function: ease-in;
-        }
-        #three{
-            background-color: brown;
-            transition-timing-function: ease-out;
-        }
-        #four{
-            background-color: purple;
-            transition-timing-function: linear;
-        }
-        #five{
-            background-color: red;
-            transition-timing-function: step-end;
+         #box3{
+            height: 250px;
+            width: 250px;
+            background-color: white;
         }
     </style>
 </head>
 <body>
-    <div id="main">
-        <div id="one" class="one"></div>
-        <div id="two" class="one"></div>
-        <div id="three" class="one"></div>
-        <div id="four" class="one"></div>
-        <div id="five" class="one"></div>
+    <div class="container">
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+   </div>
 </body>
 </html>

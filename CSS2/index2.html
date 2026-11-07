@@ -3,47 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS</title>
+    <title>Document</title>
     <style>
-        #parent{
-            height: 200px;
-            border: 2px solid;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
-        #parent div{
-            height: 50px;
-            width: 400px;
+        div{
+            height: 100px;
+            width: 100px;
+            display: inline-block;
         }
         #one{
-            background-color: black;
-        }
-        #one:hover{
-            background-color: red;
-            height: 200px;
+            background-color:dodgerblue;
         }
         #two{
-            background-color: black;
-        }
-        #two:hover{
-            background-color: blue;
-            height: 200px;
+            background-color: aquamarine;
+            position: absolute;
+            top: 10px;
+            left: 8px;
         }
         #three{
-            background-color: black;
-        }
-        #three:hover{
-            background-color: green;
-            height: 200px;
+            background-color: brown;
         }
     </style>
 </head>
 <body>
-    <div id="parent">
-        <div id="one"></div>
-        <div id="two"></div>
-        <div id="three"></div>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
 </body>
 </html>
