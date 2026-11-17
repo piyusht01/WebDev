@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+
+    <style>
+        body {
+            background-color: black;
+            margin-top: 125px;
+        }
+
+        #one {
+            min-height: 500px;
+            width: 500px;
+            margin: auto;
+            padding: 10px;
+            border: 2px solid;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            width: 450px;
+            padding: 8px;
+        }
+
+        button {
+            margin: 10px;
+            margin-left: 15px;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        #tasks {
+            margin-top: 20px;
+        }
+
+        .task-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: grey;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .task-box h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .task-box button {
+            margin: 0 3px;
+        }
+
+        .completed {
+            color: red;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="one">
+        <h1>TO DO LIST</h1>
+
+        <center>
+            <input placeholder="Enter a task" />
+        </center>
+        
+            <button>Add Task</button>
+
+        <div id="tasks"></div>
+    </div>
+
+    <script>
+        let btn = document.querySelector('button');
+        let inp = document.querySelector('input');
+        let tasks = document.querySelector('#tasks');
+
+        btn.onclick = function () {
+
+            if (inp.value.trim() === "") {
+                alert("Please enter a task");
+                return;
+            }
+
+            let box = document.createElement("div");
+            box.className = "task-box";
+
+            let h2 = document.createElement("h2");
+            let editBtn = document.createElement("button");
+            let btnD = document.createElement("button");
+
+            h2.innerText = inp.value;
+            editBtn.innerText = "Edit";
+            btnD.innerText = "Delete";
+
+            // Complete task
+            h2.onclick = function () {
+                h2.classList.toggle("completed");
+            };
+
+            // Edit task
+            editBtn.onclick = function () {
+                let newTask = prompt("Edit task", h2.innerText);
+
+                if (newTask !== null && newTask.trim() !== "") {
+                    h2.innerText = newTask;
+                }
+            };
+
+            // Delete task
+            btnD.onclick = function () {
+                box.remove();
+            };
+
+            box.append(h2, editBtn, btnD);
+            tasks.append(box);
+
+            inp.value = "";
+        };
+    </script>
+
+</body>
+</html>

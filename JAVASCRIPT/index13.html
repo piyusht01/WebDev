@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        #one{
+            height: 500px;
+            width: 500px;
+            margin: auto;
+            padding: 10px;
+            border: 2px solid;
+            background-color: white;
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            width: 450px;
+        }
+        button{
+            margin: 10px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <h1>TO DO LIST</h1>
+        <center>
+        <input placeholder="Enter a task"/>
+        </center>
+        <button>Add Task</button>
+    </div>
+
+    <script>
+        let btn=document.querySelector('button')
+        let inp=document.querySelector('input')
+        let body=document.querySelector('body')
+        btn.onclick=function(){
+            //let li=document.createElement("h2")
+            let h2=document.createElement("h2")
+            let button=document.createElement("button")
+            let btnD=document.createElement("button")
+            button.innerText="edit"
+            btnD.innerText="delete"
+            //li.innerText=inp.value
+            h2.innerText=inp.value
+            //body.append(li)
+            body.append(h2,button,btnD)
+            h2.addEventListener("click",()=>{
+                //h2.remove()
+                h2.style.color="red"
+            })
+        }
+    </script>
+
+</body>
+</html>
